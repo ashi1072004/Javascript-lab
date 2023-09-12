@@ -1,0 +1,39 @@
+*, *::before, *::after{
+    margin: 0;
+    padding: 0;
+}
+.container{
+    width: 100%;
+    height: auto;
+    /* background-color: brown; */
+}
+header{
+    height: 80px;
+    background-color: rgb(59, 199, 59);
+}
+#main{
+    height: 400px;
+    /* background-color: rgb(235, 207, 52); */
+}
+footer{
+    height: 110px;
+    background-color: rgb(128, 128, 128);
+}
+aside{
+    height: 400px;
+    width: 35%;
+    background-color: rgb(235, 207, 52);
+    float: left;
+}
+#one{
+    height: 200px;
+    width: 65%;
+    background-color: rgb(95, 163, 245);
+    float: right;
+}
+#two{
+    height: 200px;
+    width: 65%;
+    background-color: rgb(255, 167, 167);
+    float: right;
+}

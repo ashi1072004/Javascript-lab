@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    
+</head>
+<body>
+    <div class="btn">
+        <button id="open" onclick="openWin()">Open Window</button>
+        <button id="close" onclick="w.close()">Close Window</button>
+    </div>
+    <script>
+        var w;
+        function openWin(){
+            w = window.open("", "", "top=100px,left=300px, width=500px, height=600px");
+            w.document.write("<div class='container'></div>");
+            w.document.querySelector('.container').insertAdjacentHTML('afterbegin', '<link rel="stylesheet" href="./style.css">');
+            var a = "<header></header><div id='main'></div><footer></footer>";
+            w.document.querySelector('.container').insertAdjacentHTML('beforeend', a);
+            a = "<aside></aside><article id='one'></article><article id='two'></article>";
+            w.document.querySelector('#main').insertAdjacentHTML('afterbegin', a);
+        }
+    </script>
+</body>
+</html>

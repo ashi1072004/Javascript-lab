@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Stopwatch</title>
+    <style>
+        body {
+            background-color: rgb(200, 220, 255);
+        }
+
+        .main {
+            background-color: rgb(255, 255, 255);
+            width: 70%;
+            margin: 150px auto;
+            padding: 10px;
+            box-sizing: border-box;
+            box-shadow: 5px 5px 5px 2px rgb(150, 150, 150);
+        }
+
+        .display {
+            text-align: center;
+            padding: 20px 0;
+            font-size: 25px;
+        }
+
+        .btn {
+            text-align: center;
+            padding: 10px 0;
+        }
+
+        .btn>button {
+            padding: 3px 10px;
+            margin: 0 3px;
+            border: none;
+            border-radius: 4px;
+            font-size: 16px;
+            color: white;
+        }
+
+        #start {
+            background-color: rgb(70, 200, 100);
+        }
+
+        #pause {
+            background-color: rgb(250, 100, 100);
+        }
+
+        #reset {
+            background-color: rgb(100, 130, 250);
+        }
+
+        #start:hover {
+            background-color: rgb(70, 150, 100);
+        }
+
+        #pause:hover {
+            background-color: rgb(200, 100, 90);
+        }
+
+        #reset:hover {
+            background-color: rgb(100, 110, 200);
+        }
+    </style>
+</head>
+
+<body>
+    <div class="main">
+        <div class="display">
+            00 : 00 : 00 : 000
+        </div>
+        <div class="btn">
+            <button id="start">Start</button>
+            <button id="pause">Pause</button>
+            <button id="reset">Reset</button>
+            <script>
+                let [ms, s, m, h] = [0, 0, 0, 0];
+                let tdisplay = document.querySelector(".display");
+                let timer = null;
+
+                document.getElementById("start").addEventListener("click", () => {
+                    if (timer !== null) {
+                        clearInterval(timer);
+                    }
+                    timer = setInterval(dtime, 10);
+                });
+                document.getElementById("pause").addEventListener("click", () => {
+                    clearInterval(timer);
+                });
+                document.getElementById("reset").addEventListener("click", () => {
+                    clearInterval(timer);
+                    [ms, s, m, h] = [0, 0, 0, 0];
+                    tdisplay.innerHTML = '00 : 00 : 00 : 000';
+                });
+
+                function dtime() {
+                    ms += 10;
+                    if (ms == 1000) {
+                        ms = 0;
+                        s++;
+                        if (s == 60) {
+                            s = 0;
+                            m++;
+                            if (m == 60) {
+                                m = 0;
+                                h++;
+                            }
+                        }
+                    }
+                    let myh = h < 10 ? "0" + h : h;
+                    let mym = m < 10 ? "0" + m : m;
+                    let mys = s < 10 ? "0" + s : s;
+                    let myms = ms < 10 ? "00" + ms : ms < 100 ? "0" + ms : ms;
+                    tdisplay.innerHTML = `${myh} : ${mym} : ${mys} : ${myms}`;
+                }
+            </script>
+        </div>
+    </div>
+</body>
+
+</html>

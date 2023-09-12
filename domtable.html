@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DomTable</title>
+    <!-- <link rel="stylesheet" href="./files/bootstrap.min.css"> -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT" crossorigin="anonymous">
+    <style>
+        *{scroll-behavior: smooth;}
+        .bg {
+            width: 100%;
+            height: 100vh;
+            background-color: rgb(213, 227, 252);
+            overflow: auto;
+        }
+        .navbar{
+            background-color: rgb(122, 202, 111);
+        }
+        .navbar .container-fluid .collapse ul li a {
+            padding: 10px 20px;
+            color: black;
+            font-size: large;
+            font-weight: 600;
+        }
+        .navbar .container-fluid .collapse .dropdown-item {
+            color: black;
+        }
+        .mask{
+            background: white;
+            box-shadow: -15px -12px 10px 0px rgb(171, 171, 171);
+        }
+        .dropdown-menu{
+            background-color: rgb(143, 215, 134);
+        }
+        .dropdown-menu li{
+            position: relative;
+        }
+        .nav-item .submenu{ 
+            display: none;
+            position: absolute;
+            left:100%;
+            top:-7px;
+        }
+        .dropdown-item:hover{
+            background-color: #ffffff;
+        }
+        .dropdown-item:active{
+            background-color: #ffffff;
+        }
+        .dropdown-menu > li:hover > .submenu{
+            display: block;
+            background-color: rgb(143, 215, 134);
+        }
+        .row > div{
+            display: none;
+        }
+        .row > div:target{
+            display: block;
+        }
+        .uni{
+            padding-left: 20px;
+        }
+        .city h2{
+            margin: 20px;
+        }
+        .city a{
+            color: black;
+        }
+        .city a:hover{
+            color: rgb(3, 3, 139);
+        }
+    </style>
+</head>
+<body>
+    <div class="container-fluid bg p-0">
+        <!-- Navbar -->
+        <nav class="navbar navbar-expand-lg navbar-dark">
+            <div class="container-fluid p-0">
+                <button class="navbar-toggler navbar-toggler-right" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    <ul class="navbar-nav mx-auto mb-2 mb-lg-0">
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown">Punjab</a>
+                        <ul class="dropdown-menu">
+                            <li> <a class="dropdown-item" href="#fsd">Faisalabad &raquo; </a>
+                            <ul class="submenu dropdown-menu">
+                                <li><a class="dropdown-item" href="#uni1">GC University</a></li>
+                                <li><a class="dropdown-item" href="#uni2">Agriculture University</a></li>
+                                <li><a class="dropdown-item" href="#uni3">Punjab University</a></li>
+                            </ul>
+                            </li>
+                            <li> <a class="dropdown-item" href="#lhr">Lahore &raquo; </a>
+                            <ul class="submenu dropdown-menu">
+                                <li><a class="dropdown-item" href="#uni4">GC University</a></li>
+                                <li><a class="dropdown-item" href="#uni5">UET Lahore</a></li>
+                                <li><a class="dropdown-item" href="#uni6">Punjab University</a></li>
+                            </ul>
+                            </li>
+                            <li> <a class="dropdown-item" href="#mltn">Multan &raquo; </a>
+                            <ul class="submenu dropdown-menu">
+                                <li><a class="dropdown-item" href="#uni7">GC University</a></li>
+                                <li><a class="dropdown-item" href="#uni8">Bahauddin Zakariya University</a></li>
+                                <li><a class="dropdown-item" href="#uni9">Punjab University</a></li>
+                            </ul>
+                            </li>
+                        </ul>
+                        </li>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">KPK</a>
+                            <ul class="dropdown-menu">
+                                <li><a class="dropdown-item" href="#pwr">Peshawar &raquo;</a>
+                                <ul class="submenu dropdown-menu">
+                                    <li><a class="dropdown-item" href="#uni10">GC University</a></li>
+                                    <li><a class="dropdown-item" href="#uni11">Peshawar University</a></li>
+                                    <li><a class="dropdown-item" href="#uni12">UET Peshawar</a></li>
+                                </ul>
+                                </li>
+                                <li><a class="dropdown-item" href="#kht">Kohat &raquo;</a>
+                                <ul class="submenu dropdown-menu">
+                                    <li><a class="dropdown-item" href="#uni13">KUST University</a></li>
+                                    <li><a class="dropdown-item" href="#uni14">KMU Medical Institute</a></li>
+                                    <li><a class="dropdown-item" href="#uni15">Cadet College Kohat</a></li>
+                                </ul>
+                                </li>
+                                <li><a class="dropdown-item" href="#mrdn">Mardan &raquo;</a>
+                                <ul class="submenu dropdown-menu">
+                                    <li><a class="dropdown-item" href="#uni16">Abdul Wali Khan University</a></li>
+                                    <li><a class="dropdown-item" href="#uni17">Women University Mardan</a></li>
+                                    <li><a class="dropdown-item" href="#uni18">KPK University</a></li>
+                                </ul>
+                                </li>
+                            </ul>
+                        </li>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">Sindh</a>
+                            <ul class="dropdown-menu">
+                                <li><a class="dropdown-item" href="#krc">Karachi &raquo;</a>
+                                <ul class="submenu dropdown-menu">
+                                    <li><a class="dropdown-item" href="#uni19">Agha Khan University</a></li>
+                                    <li><a class="dropdown-item" href="#uni20">Iqra University</a></li>
+                                    <li><a class="dropdown-item" href="#uni21">University of Karachi</a></li>
+                                </ul>
+                                </li>
+                                <li><a class="dropdown-item" href="#hdb">Hyderabad &raquo;</a>
+                                <ul class="submenu dropdown-menu">
+                                    <li><a class="dropdown-item" href="#uni22">GC University</a></li>
+                                    <li><a class="dropdown-item" href="#uni23">Isra University</a></li>
+                                    <li><a class="dropdown-item" href="#uni24">University of EAST</a></li>
+                                </ul>
+                                </li>
+                                <li><a class="dropdown-item" href="#skr">Sukkur &raquo;</a>
+                                <ul class="submenu dropdown-menu">
+                                    <li><a class="dropdown-item" href="#uni25">Sukkur IBA University</a></li>
+                                    <li><a class="dropdown-item" href="#uni26">Sukkur institute of Science and Tech</a></li>
+                                    <li><a class="dropdown-item" href="#uni27">GC University</a></li>
+                                </ul>
+                                </li>
+                            </ul>
+                        </li>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">Balochistan</a>
+                            <ul class="dropdown-menu">
+                                <li><a class="dropdown-item" href="#qta">Quetta &raquo;</a>
+                                    <ul class="submenu dropdown-menu">
+                                    <li><a class="dropdown-item" href="#uni28">University of Balochistan</a></li>
+                                    <li><a class="dropdown-item" href="#uni29">Agriculture University</a></li>
+                                    <li><a class="dropdown-item" href="#uni30">Al-Hamd Islamic University</a></li>
+                                </ul>
+                                </li>
+                                <li><a class="dropdown-item" href="#cmn">Chaman &raquo;</a>
+                                    <ul class="submenu dropdown-menu">
+                                    <li><a class="dropdown-item" href="#uni31">GC University</a></li>
+                                    <li><a class="dropdown-item" href="#uni32">Allama Iqbal Open University</a></li>
+                                    <li><a class="dropdown-item" href="#uni33">Chaman Cadet College</a></li>
+                                </ul>
+                                </li>
+                                <li><a class="dropdown-item" href="#gwdr">Gwadar &raquo;</a>
+                                    <ul class="submenu dropdown-menu">
+                                    <li><a class="dropdown-item" href="#uni34">University of Gwadar</a></li>
+                                    <li><a class="dropdown-item" href="#uni35">NUML Gwadar Campus</a></li>
+                                    <li><a class="dropdown-item" href="#uni36">Allama Iqbal Open University</a></li>
+                                </ul>
+                                </li>
+                            </ul>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+        <!-- University Pages -->
+        <div class="row justify-content-center m-0 city">
+            <div id="fsd" class="col-10 my-5">
+                <h1>See results of <em>"Faisalabad"</em></h1>
+                <h2><a href="#uni1">GC University</a></h2>
+                <h2><a href="#uni2">Agriculture University</a></h2>
+                <h2><a href="#uni3">Punjab University</a></h2>
+            </div>
+            <div id="lhr" class="col-10 my-5">
+                <h1>See results of <em>"Lahore"</em></h1>
+                <h2><a href="#uni4">GC University</a></h2>
+                <h2><a href="#uni5">UET University</a></h2>
+                <h2><a href="#uni6">Punjab University</a></h2>
+            </div>
+            <div id="mltn" class="col-10 my-5">
+                <h1>See results of <em>"Multan"</em></h1>
+                <h2><a href="#uni7">GC University</a></h2>
+                <h2><a href="#uni8">Bahauddin Zakariya University</a></h2>
+                <h2><a href="#uni9">Punjab University</a></h2>
+            </div>
+            <div id="pwr" class="col-10 my-5">
+                <h1>See results of <em>"Peshawar"</em></h1>
+                <h2><a href="#uni10">GC University</a></h2>
+                <h2><a href="#uni11">Peshawar University</a></h2>
+                <h2><a href="#uni12">UET Peshawar</a></h2>
+            </div>
+            <div id="kht" class="col-10 my-5">
+                <h1>See results of <em>"Kohat"</em></h1>
+                <h2><a href="#uni13">KUST University</a></h2>
+                <h2><a href="#uni14">KMU Medical Institute/a></h2>
+                <h2><a href="#uni15">Cadet College Kohat</a></h2>
+            </div>
+            <div id="mrdn" class="col-10 my-5">
+                <h1>See results of <em>"Mardan"</em></h1>
+                <h2><a href="#uni16">Abdul Wali Khan University</a></h2>
+                <h2><a href="#uni17">Women University Mardan</a></h2>
+                <h2><a href="#uni18">KPK University</a></h2>
+            </div>
+            <div id="krc" class="col-10 my-5">
+                <h1>See results of <em>"Karachi"</em></h1>
+                <h2><a href="#uni19">Agha Khan University</a></h2>
+                <h2><a href="#uni20">Iqra University</a></h2>
+                <h2><a href="#uni21">University of Karachi</a></h2>
+            </div>
+            <div id="hdb" class="col-10 my-5">
+                <h1>See results of <em>"Hyderabad"</em></h1>
+                <h2><a href="#uni22">GC University</a></h2>
+                <h2><a href="#uni23">Isra University</a></h2>
+                <h2><a href="#uni24">University of EAST</a></h2>
+            </div>
+            <div id="skr" class="col-10 my-5">
+                <h1>See results of <em>"Sukkur"</em></h1>
+                <h2><a href="#uni25">Sukkur IBA University</a></h2>
+                <h2><a href="#uni26">Sukkur institute of Science and Tech</a></h2>
+                <h2><a href="#uni27">GC University</a></h2>
+            </div>
+            <div id="qta" class="col-10 my-5">
+                <h1>See results of <em>"Quetta"</em></h1>
+                <h2><a href="#uni28">University of Balochistan</a></h2>
+                <h2><a href="#uni29">Agriculture University</a></h2>
+                <h2><a href="#uni30">Al-Hamd Islamic University</a></h2>
+            </div>
+            <div id="cmn" class="col-10 my-5">
+                <h1>See results of <em>"Chaman"</em></h1>
+                <h2><a href="#uni31">GC University</a></h2>
+                <h2><a href="#uni32">Allama Iqbal Open University</a></h2>
+                <h2><a href="#uni33">Chaman Cadet College</a></h2>
+            </div>
+            <div id="gwdr" class="col-10 my-5">
+                <h1>See results of <em>"Gwadar"</em></h1>
+                <h2><a href="#uni34">University of Gwadar</a></h2>
+                <h2><a href="#uni35">NUML Gwadar Campus</a></h2>
+                <h2><a href="#uni36">Allama Iqbal Open University</a></h2>
+            </div>
+        </div>
+        <div id="row" class="row justify-content-center m-0">
+            <!-- Array 6d -->
+        </div>
+    </div>
+    
+    <script src="./domtable.js"></script>
+    <!-- <script src="./files/popper.min.js"></script>
+    <script src="./files/bootstrap.min.js"></script> -->
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"
+    integrity="sha384-oBqDVmMz9ATKxIep9tiCxS/Z9fNfEXiDAYTujMAeBAsjFuCZSmKbSSUnQlmh/jp3" crossorigin="anonymous">
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.min.js"
+        integrity="sha384-7VPbUDkoPSGFnVtYi0QogXtr74QeVeeIs99Qfg5YCF+TidwNdjvaKZX19NZ/e6oz" crossorigin="anonymous">
+    </script>
+</body>
+</html>

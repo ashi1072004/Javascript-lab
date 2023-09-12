@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Table</title>
+    <link rel="stylesheet" href="./files/bootstrap.min.css">
+</head>
+<style>
+    div > table{
+        display: none;
+    }
+    div > table:target{
+        display: block;
+    }
+</style>
+<body>
+    <div class="container-fluid">
+        <!-------------------------- Table ------------------------>
+        <div class="row justify-content-center">
+            <div class="col-9 mt-5 pb-4">
+                <a href="#tab1">Table 1</a>
+                <a href="#tab2">Table 2</a>
+                <div class="table-responsive p-4">
+                    <table id="tab1" class="table mb-0 table-hover text-nowrap">
+                        <thead>
+                            <tr class="bg-success">
+                                <th scope="col">Roll no.</th>
+                                <th scope="col">Name</th>
+                                <th scope="col">Department</th>
+                                <th scope="col">VB marks</th>
+                                <th scope="col">OS marks</th>
+                                <th scope="col">SE marks</th>
+                                <th scope="col">Stat marks</th>
+                                <th scope="col">Web Tech marks</th>
+                                <th scope="col">Total marks</th>
+                                <th scope="col">Obtained marks</th>
+                                <th scope="col">%age</th>
+                                <th scope="col">Grade</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <script>
+                                var i=577801;
+                                const std = [['Ali', 'BSCS', 52, 68, 45, 56, 45],
+                                            ['Hamza', 'BSCS', 48, 60, 51, 49, 28],
+                                            ['Usman', 'BSIT', 50, 78, 59, 43, 58],
+                                            ['Fatima', 'BSIT', 54, 65, 40, 19, 37],
+                                            ['Ayesha', 'BSIT', 34, 43, 31, 19, 27]];
+                                const total = 320;
+                                for(let row in std){
+                                    let ob=0, per, g;
+                                    document.write('<tr>');
+                                    document.write('<td>'+i+'</td>'); i++;
+                                    for(let x in std[row]){
+                                        if(typeof std[row][x] == 'number'){
+                                            ob += std[row][x];
+                                        }
+                                        document.write('<td>'+std[row][x]+'</td>');
+                                    }
+                                    document.write('<td>'+total+'</td>');
+                                    document.write('<td>'+ob+'</td>');
+                                    per = Math.round(ob/total*100);
+                                    document.write('<td>'+per+'</td>');
+                                    switch(true){
+                                        case(per>=90 && per<=100):
+                                            g = 'A+';
+                                            break;
+                                        case(per>=80 && per<=90):
+                                            g = 'A';
+                                            break;
+                                        case(per>=70 && per<=80):
+                                            g = 'B';
+                                            break;
+                                        case(per>=60 && per<=70):
+                                            g = 'C';
+                                            break;
+                                        case(per>=50 && per<=60):
+                                            g = 'D';
+                                            break;
+                                        default:
+                                            g = 'F';
+                                    }
+                                    document.write('<td>'+g+'</td>');
+                                    document.write('</tr>');
+                                }
+                            </script>
+                        </tbody>
+                    </table>
+                    <table id="tab2" class="table mb-0 table-hover text-nowrap">
+                        <thead>
+                            <tr class="bg-success">
+                                <th scope="col">Roll no.</th>
+                                <th scope="col">Name</th>
+                                <th scope="col">Department</th>
+                                <th scope="col">VB marks</th>
+                                <th scope="col">OS marks</th>
+                                <th scope="col">SE marks</th>
+                                <th scope="col">Stat marks</th>
+                                <th scope="col">Web Tech marks</th>
+                                <th scope="col">Total marks</th>
+                                <th scope="col">Obtained marks</th>
+                                <th scope="col">%age</th>
+                                <th scope="col">Grade</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <script>
+                                for(let row in std){
+                                    let ob=0;
+                                    document.write('<tr>');
+                                    document.write('<td>'+i+'</td>'); i++;
+                                    for(let x in std[row]){
+                                        if(typeof std[row][x] == 'number'){
+                                            ob += std[row][x];
+                                        }
+                                        document.write('<td>'+std[row][x]+'</td>');
+                                    }
+                                    document.write('<td>'+total+'</td>');
+                                    document.write('<td>'+ob+'</td>');
+                                    per = Math.round(ob/total*100);
+                                    document.write('<td>'+per+'</td>');
+                                    switch(true){
+                                        case(per>=90 && per<=100):
+                                            g = 'A+';
+                                            break;
+                                        case(per>=80 && per<=90):
+                                            g = 'A';
+                                            break;
+                                        case(per>=70 && per<=80):
+                                            g = 'B';
+                                            break;
+                                        case(per>=60 && per<=70):
+                                            g = 'C';
+                                            break;
+                                        case(per>=50 && per<=60):
+                                            g = 'D';
+                                            break;
+                                        default:
+                                            g = 'F';
+                                    }
+                                    document.write('<td>'+g+'</td>');
+                                    document.write('</tr>');
+                                }
+                            </script>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <script src="./files/popper.min.js"></script>
+    <script src="./files/bootstrap.min.js"></script>
+</body>
+</html>

@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <center>
+        <img src="img/danny.jpg" id="img" alt="">
+        <div>
+            <button id="btn1"> Previous Image</button>
+            <button id="btn2">Next Image</button>
+            <button id="btn3"> Unset Image</button>
+        </div>
+    </center>
+    <script>
+        function unset(){
+            document.querySelector('#img').setAttribute('src', 'img/danny.jpg');
+            document.querySelector('#img').setAttribute('width', '300');
+            document.querySelector('#img').setAttribute('height', '200');
+        }
+        function pre(){
+            document.querySelector('#img').setAttribute('src', 'img/dell.jpg');
+            document.querySelector('#img').setAttribute('width', '300');
+            document.querySelector('#img').setAttribute('height', '200');
+        }
+        function next(){
+            document.querySelector('#img').setAttribute('src', 'img/office.jpg');
+            document.querySelector('#img').setAttribute('width', '700');
+            document.querySelector('#img').setAttribute('height', '500');
+        }
+        document.querySelector('#btn1').addEventListener('click', pre);
+        document.querySelector('#btn2').addEventListener('click', next);
+        document.querySelector('#btn3').addEventListener('click', unset);
+    </script>
+</body>
+
+</html>
