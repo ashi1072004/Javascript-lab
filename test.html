@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Test</title>
+</head>
+
+<body>
+    <script>
+        "use strict";
+        function showCount(count) {
+            return (count ?? 'unknown');
+        }
+        // alert(showCount(0)); // 0
+        // alert(showCount(null)); // unknown
+        // alert(showCount()); // unknown
+
+        // function showPrimes(n) {
+        //     nextPrime: for (let i = 2; i < n; i++) {
+        //         for (let j = 2; j < i; j++) {
+        //             if (i % j == 0) continue nextPrime;
+        //         }
+        //         alert(i); // a prime
+        //     }
+        // }
+
+        function showPrimes(n) {
+            for (let i = 2; i < n; i++) {
+                if (!isPrime(i)) continue;
+                alert(i);  // a prime
+            }
+        }
+        function isPrime(n) {
+            for (let i = 2; i < n; i++) {
+                if (n % i == 0) return false;
+            }
+            return true;
+        }
+        showPrimes(10);
+        // using '?'
+        function checkAge(age) {
+            return (age > 18) ? true : confirm('Did parents allow you?');
+        }
+        // using '||' the shortest variant
+        function checkAge(age) {
+            return (age > 18) || confirm('Did parents allow you?');
+        }
+    </script>
+</body>
+
+</html>l
