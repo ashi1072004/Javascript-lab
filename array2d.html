@@ -1,19 +1,23 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Table</title>
-    <link rel="stylesheet" href="./files/bootstrap.min.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT" crossorigin="anonymous">
 </head>
 <style>
-    div > table{
+    div>table {
         display: none;
     }
-    div > table:target{
+
+    div>table:target {
         display: block;
     }
 </style>
+
 <body>
     <div class="container-fluid">
         <!-------------------------- Table ------------------------>
@@ -41,47 +45,47 @@
                         </thead>
                         <tbody>
                             <script>
-                                var i=577801;
+                                var i = 577801;
                                 const std = [['Ali', 'BSCS', 52, 68, 45, 56, 45],
-                                            ['Hamza', 'BSCS', 48, 60, 51, 49, 28],
-                                            ['Usman', 'BSIT', 50, 78, 59, 43, 58],
-                                            ['Fatima', 'BSIT', 54, 65, 40, 19, 37],
-                                            ['Ayesha', 'BSIT', 34, 43, 31, 19, 27]];
+                                ['Hamza', 'BSCS', 48, 60, 51, 49, 28],
+                                ['Usman', 'BSIT', 50, 78, 59, 43, 58],
+                                ['Fatima', 'BSIT', 54, 65, 40, 19, 37],
+                                ['Ayesha', 'BSIT', 34, 43, 31, 19, 27]];
                                 const total = 320;
-                                for(let row in std){
-                                    let ob=0, per, g;
+                                for (let row in std) {
+                                    let ob = 0, per, g;
                                     document.write('<tr>');
-                                    document.write('<td>'+i+'</td>'); i++;
-                                    for(let x in std[row]){
-                                        if(typeof std[row][x] == 'number'){
+                                    document.write('<td>' + i + '</td>'); i++;
+                                    for (let x in std[row]) {
+                                        if (typeof std[row][x] == 'number') {
                                             ob += std[row][x];
                                         }
-                                        document.write('<td>'+std[row][x]+'</td>');
+                                        document.write('<td>' + std[row][x] + '</td>');
                                     }
-                                    document.write('<td>'+total+'</td>');
-                                    document.write('<td>'+ob+'</td>');
-                                    per = Math.round(ob/total*100);
-                                    document.write('<td>'+per+'</td>');
-                                    switch(true){
-                                        case(per>=90 && per<=100):
+                                    document.write('<td>' + total + '</td>');
+                                    document.write('<td>' + ob + '</td>');
+                                    per = Math.round(ob / total * 100);
+                                    document.write('<td>' + per + '</td>');
+                                    switch (true) {
+                                        case (per >= 90 && per <= 100):
                                             g = 'A+';
                                             break;
-                                        case(per>=80 && per<=90):
+                                        case (per >= 80 && per <= 90):
                                             g = 'A';
                                             break;
-                                        case(per>=70 && per<=80):
+                                        case (per >= 70 && per <= 80):
                                             g = 'B';
                                             break;
-                                        case(per>=60 && per<=70):
+                                        case (per >= 60 && per <= 70):
                                             g = 'C';
                                             break;
-                                        case(per>=50 && per<=60):
+                                        case (per >= 50 && per <= 60):
                                             g = 'D';
                                             break;
                                         default:
                                             g = 'F';
                                     }
-                                    document.write('<td>'+g+'</td>');
+                                    document.write('<td>' + g + '</td>');
                                     document.write('</tr>');
                                 }
                             </script>
@@ -106,40 +110,40 @@
                         </thead>
                         <tbody>
                             <script>
-                                for(let row in std){
-                                    let ob=0;
+                                for (let row in std) {
+                                    let ob = 0;
                                     document.write('<tr>');
-                                    document.write('<td>'+i+'</td>'); i++;
-                                    for(let x in std[row]){
-                                        if(typeof std[row][x] == 'number'){
+                                    document.write('<td>' + i + '</td>'); i++;
+                                    for (let x in std[row]) {
+                                        if (typeof std[row][x] == 'number') {
                                             ob += std[row][x];
                                         }
-                                        document.write('<td>'+std[row][x]+'</td>');
+                                        document.write('<td>' + std[row][x] + '</td>');
                                     }
-                                    document.write('<td>'+total+'</td>');
-                                    document.write('<td>'+ob+'</td>');
-                                    per = Math.round(ob/total*100);
-                                    document.write('<td>'+per+'</td>');
-                                    switch(true){
-                                        case(per>=90 && per<=100):
+                                    document.write('<td>' + total + '</td>');
+                                    document.write('<td>' + ob + '</td>');
+                                    per = Math.round(ob / total * 100);
+                                    document.write('<td>' + per + '</td>');
+                                    switch (true) {
+                                        case (per >= 90 && per <= 100):
                                             g = 'A+';
                                             break;
-                                        case(per>=80 && per<=90):
+                                        case (per >= 80 && per <= 90):
                                             g = 'A';
                                             break;
-                                        case(per>=70 && per<=80):
+                                        case (per >= 70 && per <= 80):
                                             g = 'B';
                                             break;
-                                        case(per>=60 && per<=70):
+                                        case (per >= 60 && per <= 70):
                                             g = 'C';
                                             break;
-                                        case(per>=50 && per<=60):
+                                        case (per >= 50 && per <= 60):
                                             g = 'D';
                                             break;
                                         default:
                                             g = 'F';
                                     }
-                                    document.write('<td>'+g+'</td>');
+                                    document.write('<td>' + g + '</td>');
                                     document.write('</tr>');
                                 }
                             </script>
@@ -149,8 +153,13 @@
             </div>
         </div>
     </div>
-    
-    <script src="./files/popper.min.js"></script>
-    <script src="./files/bootstrap.min.js"></script>
+
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"
+        integrity="sha384-oBqDVmMz9ATKxIep9tiCxS/Z9fNfEXiDAYTujMAeBAsjFuCZSmKbSSUnQlmh/jp3" crossorigin="anonymous">
+        </script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.min.js"
+        integrity="sha384-7VPbUDkoPSGFnVtYi0QogXtr74QeVeeIs99Qfg5YCF+TidwNdjvaKZX19NZ/e6oz" crossorigin="anonymous">
+        </script>
 </body>
+
 </html>

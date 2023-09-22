@@ -1,11 +1,14 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Table</title>
-    <link rel="stylesheet" href="./files/bootstrap.min.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT" crossorigin="anonymous">
 </head>
+
 <body>
     <div class="container-fluid">
         <!-------------------------- Table ------------------------>
@@ -31,53 +34,53 @@
                         </thead>
                         <tbody>
                             <script>
-                            // function increment(){
-                            //     static i=577801;
-                            //      i;
-                            //     i++;
-                            // }
-                            var n = ['Ali', 'Hamza', 'Usman', 'Fatima', 'Ayesha'], dep = ['BSCS', 'BSCS', 'BSIT', 'BSIT', 'BSIT'], VB = [52, 48, 50, 54, 34], OS = [68, 60, 78, 65, 43], SE = [45, 51, 59, 40, 31], STA = [56, 49, 43, 19, 19], WT = [45, 28, 58, 37, 27], total = 320, ob = [], per = [], g = [];
-                            for(let x=0; x<5; x++){
-                                ob[x] = VB[x] + OS[x] + SE[x] + STA[x] + WT[x];
-                                per[x] = Math.round(ob[x]/total*100);
-                            }
-                            for(let x=0; x<5; x++){
-                                switch(true){
-                                    case(per[x]>=90 && per[x]<=100):
-                                    g[x] = 'A+';
-                                    break;
-                                    case(per[x]>=80 && per[x]<=90):
-                                    g[x] = 'A';
-                                    break;
-                                    case(per[x]>=70 && per[x]<=80):
-                                    g[x] = 'B';
-                                    break;
-                                    case(per[x]>=60 && per[x]<=70):
-                                    g[x] = 'C';
-                                    break;
-                                    case(per[x]>=50 && per[x]<=60):
-                                    g[x] = 'D';
-                                    break;
-                                    default:
-                                    g[x] = 'F';
+                                // function increment(){
+                                //     static i=577801;
+                                //      i;
+                                //     i++;
+                                // }
+                                var n = ['Ali', 'Hamza', 'Usman', 'Fatima', 'Ayesha'], dep = ['BSCS', 'BSCS', 'BSIT', 'BSIT', 'BSIT'], VB = [52, 48, 50, 54, 34], OS = [68, 60, 78, 65, 43], SE = [45, 51, 59, 40, 31], STA = [56, 49, 43, 19, 19], WT = [45, 28, 58, 37, 27], total = 320, ob = [], per = [], g = [];
+                                for (let x = 0; x < 5; x++) {
+                                    ob[x] = VB[x] + OS[x] + SE[x] + STA[x] + WT[x];
+                                    per[x] = Math.round(ob[x] / total * 100);
                                 }
-                            }
-                            for(let x=0; x<5; x++){
-                                document.write('<tr>'+
-                                //  '<th scope="row">'; increment();  '</th>';
-                                    '<td scope="row">'+n[x]+'</td>'+
-                                    '<td>'+dep[x]+'</td>'+
-                                    '<td>'+VB[x]+'</td>'+
-                                    '<td>'+OS[x]+'</td>'+
-                                    '<td>'+SE[x]+'</td>'+
-                                    '<td>'+STA[x]+'</td>'+
-                                    '<td>'+WT[x]+'</td>'+
-                                    '<td>'+total+'</td>'+
-                                    '<td>'+ob[x]+'</td>'+
-                                    '<td>'+per[x]+'%</td>'+
-                                    '<td>'+g[x]+'</td>'+
-                                    '</tr>');
-                            }
+                                for (let x = 0; x < 5; x++) {
+                                    switch (true) {
+                                        case (per[x] >= 90 && per[x] <= 100):
+                                            g[x] = 'A+';
+                                            break;
+                                        case (per[x] >= 80 && per[x] <= 90):
+                                            g[x] = 'A';
+                                            break;
+                                        case (per[x] >= 70 && per[x] <= 80):
+                                            g[x] = 'B';
+                                            break;
+                                        case (per[x] >= 60 && per[x] <= 70):
+                                            g[x] = 'C';
+                                            break;
+                                        case (per[x] >= 50 && per[x] <= 60):
+                                            g[x] = 'D';
+                                            break;
+                                        default:
+                                            g[x] = 'F';
+                                    }
+                                }
+                                for (let x = 0; x < 5; x++) {
+                                    document.write('<tr>' +
+                                        //  '<th scope="row">'; increment();  '</th>';
+                                        '<td scope="row">' + n[x] + '</td>' +
+                                        '<td>' + dep[x] + '</td>' +
+                                        '<td>' + VB[x] + '</td>' +
+                                        '<td>' + OS[x] + '</td>' +
+                                        '<td>' + SE[x] + '</td>' +
+                                        '<td>' + STA[x] + '</td>' +
+                                        '<td>' + WT[x] + '</td>' +
+                                        '<td>' + total + '</td>' +
+                                        '<td>' + ob[x] + '</td>' +
+                                        '<td>' + per[x] + '%</td>' +
+                                        '<td>' + g[x] + '</td>' +
+                                        '</tr>');
+                                }
                             </script>
                         </tbody>
                     </table>
@@ -85,7 +88,12 @@
             </div>
         </div>
     </div>
-    <script src="./files/popper.min.js"></script>
-    <script src="./files/bootstrap.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"
+        integrity="sha384-oBqDVmMz9ATKxIep9tiCxS/Z9fNfEXiDAYTujMAeBAsjFuCZSmKbSSUnQlmh/jp3" crossorigin="anonymous">
+        </script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.min.js"
+        integrity="sha384-7VPbUDkoPSGFnVtYi0QogXtr74QeVeeIs99Qfg5YCF+TidwNdjvaKZX19NZ/e6oz" crossorigin="anonymous">
+        </script>
 </body>
+
 </html>
