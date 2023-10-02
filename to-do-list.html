@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <style>
+        *{
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box;
+            font-family: 'Poppins', sans-serif;
+        }
+        body{
+            height: 100vh;
+            background: #066acd;
+        }
+        .container{
+            width: 40%;
+            height: 100px;
+            min-width: 450px;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            background: white;
+            border-radius: 10px;
+            transform: translate(-50%, -50%);
+        }
+        #newtask, #tasks{
+            position: relative;
+            padding: 30px 20px;
+        }
+        #newtask input{
+            position: relative;
+            padding: 10px;
+            height: 45px;
+            width: 75%;
+            color: #111;
+            font-size: 15px;
+            border-radius: 5px;
+            border: 2px solid #d1d3d4;
+
+        }
+        #newtask input:focus{
+            outline: none;
+            border-color: #0d75ec;
+        }
+        #newtask button{
+            position: relative;
+            float: right;
+            cursor: pointer;
+            color: white;
+            background: #0d75ec;
+            border: none;
+            border-radius: 5px;
+            font-size: 16px;
+            outline: none;
+            height: 45px;
+            width: 20%;
+        }
+        #tasks{
+            width: 100%;
+            border-radius: 10px;
+            background-color: white;
+            margin-top: 10px;
+        }
+        .task{
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            height: 50px;
+            border: 1px solid #939697;
+            border-radius: 5px;
+            background: #c5e1e6;
+            margin-bottom: 8px;
+            padding: 5px 10px;
+            color: #272727;
+        }
+        .task span{
+            font-size: 15px;
+        }
+        .task button{
+            background: #6583e5;
+            color: white;
+            height: 100%;
+            width: 40px;
+            border-radius: 5px;
+            cursor: pointer;
+            border: none;
+            outline: none;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div id="newtask">
+            <input type="text" placeholder="Add Tasks">
+            <button id="push">Add</button>
+        </div>
+        <div id="tasks">
+            
+        </div>
+    </div>
+    <script>
+        document.querySelector("#push").onclick = () => {
+            let n = document.querySelector("#newtask input").value;
+            if (n.length == 0){
+                alert("Please Enter a Task!");
+            }else{
+                document.querySelector("#tasks").innerHTML += `
+                    <div class="task">
+                        <span>${n}</span>
+                        <button class="delete" onclick="r(this)">
+                            <i class="fa fa-trash-alt"></i>
+                        </button>
+                    </div>`;
+                n = "";
+                // var t = document.querySelectorAll(".delete");
+                // for(var x=0; x<t.length; x++){
+                //     t[x].onclick = () => {
+                //         this.parentNode.remove();
+                //     };
+                // }
+            }
+        };
+        function r(e){
+            e.parentNode.remove();
+        }
+    </script>
+</body>
+</html>
