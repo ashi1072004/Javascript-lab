@@ -1,53 +1,37 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Test</title>
-</head>
-
-<body>
+    <title>Document</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/mocha/3.2.0/mocha.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/mocha/3.2.0/mocha.js"></script>
     <script>
-        "use strict";
-        function showCount(count) {
-            return (count ?? 'unknown');
-        }
-        // alert(showCount(0)); // 0
-        // alert(showCount(null)); // unknown
-        // alert(showCount()); // unknown
+        mocha.setup("bdd");
+    </script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/chai/3.5.0/chai.js"></script>
+    <script>
+        let assert = chai.assert;
+    </script>
+</head>
+<body>
+    <div id="mocha"></div>
+    <script>
+        function pow(x, n){
+            if(n<0) return NaN;
+            if(Math.round(n) != n) return NaN;
 
-        // function showPrimes(n) {
-        //     nextPrime: for (let i = 2; i < n; i++) {
-        //         for (let j = 2; j < i; j++) {
-        //             if (i % j == 0) continue nextPrime;
-        //         }
-        //         alert(i); // a prime
-        //     }
-        // }
-
-        function showPrimes(n) {
-            for (let i = 2; i < n; i++) {
-                if (!isPrime(i)) continue;
-                alert(i);  // a prime
+            let r = 1;
+            for(s=0;s<n;s++){
+                r*=x;
             }
+            return r;
         }
-        function isPrime(n) {
-            for (let i = 2; i < n; i++) {
-                if (n % i == 0) return false;
-            }
-            return true;
-        }
-        showPrimes(10);
-        // using '?'
-        function checkAge(age) {
-            return (age > 18) ? true : confirm('Did parents allow you?');
-        }
-        // using '||' the shortest variant
-        function checkAge(age) {
-            return (age > 18) || confirm('Did parents allow you?');
-        }
+        document.write(pow(3,4));
+    </script>
+    <script src="./test.js"></script>
+    <script>
+        mocha.run();
     </script>
 </body>
-
 </html>

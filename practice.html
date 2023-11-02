@@ -1,37 +1,86 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/mocha/3.2.0/mocha.css">
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/mocha/3.2.0/mocha.js"></script>
-    <script>
-        mocha.setup("bdd");
-    </script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/chai/3.5.0/chai.js"></script>
-    <script>
-        let assert = chai.assert;
-    </script>
+    <title>Test</title>
 </head>
-<body>
-    <div id="mocha"></div>
-    <script>
-        function pow(x, n){
-            if(n<0) return NaN;
-            if(Math.round(n) != n) return NaN;
 
-            let r = 1;
-            for(s=0;s<n;s++){
-                r*=x;
-            }
-            return r;
-        }
-        document.write(pow(3,4));
-    </script>
-    <script src="./test.js"></script>
+<body>
     <script>
-        mocha.run();
+        "use strict";
+        function showPrimes(n) {
+            nextPrime: for (let i = 2; i < n; i++) {
+                for (let j = 2; j < i; j++) {
+                    if (i % j == 0) continue nextPrime;
+                }
+                alert(i); // a prime
+            }
+        }
+
+        function showPrimes(n) {
+            for (let i = 2; i < n; i++) {
+                if (!isPrime(i)) continue;
+                alert(i);  // a prime
+            }
+        }
+        function isPrime(n) {
+            for (let i = 2; i < n; i++) {
+                if (n % i == 0) return false;
+            }
+            return true;
+        }
+        // showPrimes(10);
+
+        // using '?'
+        function checkAge(age) {
+            return (age > 18) ? true : confirm('Did parents allow you?');
+        }
+        // using '||' the shortest variant
+        function checkAge(age) {
+            return (age > 18) || confirm('Did parents allow you?');
+        }
+        // "this" is important here bcz "a" and "b" are read at runtime
+        let calculator = {
+            sum() {
+                return this.a + this.b;
+            },
+
+            mul() {
+                return this.a * this.b;
+            },
+
+            read() {
+                this.a = +prompt('a?', 0);
+                this.b = +prompt('b?', 0);
+            }
+        };
+        // calculator.read();
+        // alert(calculator.sum());
+        // alert(calculator.mul());
+
+        // var scope
+        // function f(){
+            // var a = 'inner';
+            // a = 'inner';
+        // }
+        // var a = 'outer';
+        // var a;
+        // f();
+        // document.write(a);
+
+        // let scope
+        function f(){
+            a = 'inner';
+        }
+        // let a = 'outer';
+        let a;
+        f();
+        // document.write(a);
+
+        
     </script>
 </body>
+
 </html>
